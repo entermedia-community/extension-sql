@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<user enabled="true">
+  <user-name>admin</user-name>
+  <password>DES:E3MpBd2qgAY47RMMVoR5Tg==</password>
+  <creation-date>1146231775645</creation-date>
+  <properties>
+    <property name="billingAddress1" value="skdjfsd"/>
+    <property name="productvpa" value="false"/>
+    <property name="billingAddress2" value="kj"/>
+    <property name="billingZipCode" value="kj"/>
+    <property name="addresslist" value="shipping,billing"/>
+    <property name="screenName" value=""/>
+    <property name="viewoms" value="false"/>
+    <property name="productexpirations" value="false"/>
+    <property name="TaxRate" value="0.0000"/>
+    <property name="productzones" value="false"/>
+    <property name="billingState" value=";LLKJ"/>
+    <property name="productlegal" value="false"/>
+    <property name="shippingState" value="LKJ"/>
+    <property name="viewsfnet" value="false"/>
+    <property name="retention" value="false"/>
+    <property name="billingCity" value=";lkj"/>
+    <property name="billingCountry" value="4532"/>
+    <property name="firstName" value="The"/>
+    <property name="enabled" value="true"/>
+    <property name="lastName" value="Administrator"/>
+    <property name="searchtype" value="categories"/>
+    <property name="oe.edit.mode" value="preview"/>
+    <property name="datalevel" value="advanced"/>
+    <property name="shippingZipCode" value="232332"/>
+    <property name="shippingAddress1" value="sdfs"/>
+    <property name="shippingAddress2" value="jk"/>
+    <property name="openadmintoolbar" value="true"/>
+    <property name="showassetmanager" value="false"/>
+    <property name="email" value=""/>
+    <property name="producttiming" value="false"/>
+    <property name="shippingCountry" value="USA"/>
+    <property name="productorderingoptions" value="false"/>
+    <property name="shippingCity" value="kjj"/>
+    <property name="showbasket" value="false"/>
+    <property name="viewaas" value="false"/>
+  </properties>
+  <group id="administrators"/>
+  <group id="developers"/>
+</user>

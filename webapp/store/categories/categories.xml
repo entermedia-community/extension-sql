@@ -1,0 +1,5 @@
+
+<catalog id="index" name="Index">
+  <property id="categoryhome">/store/categories/</property>
+  <catalog id="child1" name="New Child"/>
+</catalog>

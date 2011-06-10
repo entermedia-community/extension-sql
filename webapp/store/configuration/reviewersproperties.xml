@@ -1,0 +1,10 @@
+ 
+<properties>
+  <property id="id" >Id</property>
+  <property id="departments" editable="true" list="true">Department</property>
+  <property id="contact" editable="true">Contact</property>
+  <property id="datesent"  type="date"  format="MM/dd/yyyy" editable="true">Date Sent</property>
+  <property id="datereviewed" type="date"  format="MM/dd/yyyy" editable="true">Date Reviewed</property>
+  <property id="reviewstatus" editable="true" list="true" >Status</property>
+  <property id="productid" editable="true">Product ID</property>
+</properties>

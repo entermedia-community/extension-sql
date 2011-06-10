@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<group id="advertisingedit">
+  <group-name>Advertising Edit</group-name>
+  <permissions>
+    <permission>archive.advancedsearch</permission>
+    <permission>archive.browser</permission>
+    <permission>archive.viewsavedquery</permission>
+    <permission>archive.upload</permission>
+    <permission>zip</permission>
+    <permission>conversion</permission>
+    <permission>archive.normalsearch</permission>
+    <permission>archive.productadvanceddetails</permission>
+    <permission>viewarchive</permission>
+    <permission>oe.edit.upload</permission>
+    <permission>detailview</permission>
+    <permission>archive.directdownloads</permission>
+    <permission>archive.editsavedquery</permission>
+  </permissions>
+  <properties/>
+</group>

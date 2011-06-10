@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<store>
+	<name>OpenEdit Store</name>
+  <credit-card-type name="Master Card" id="MCARD"/>
+  <credit-card-type name="Visa" id="VISA"/>
+  <credit-card-type name="American Express" id="AMEX"/>
+  <credit-card-type name="Discover" id="DISCOVER"/>
+  <credit-card-type name="GE Finance" id="GEFINANCE"/>
+  <tax statecode="OH" rate=".07"/>
+  <Xhostname>Test</Xhostname>
+  <coupons enabled="true" />
+  <to-address>cburkey@openedit.org</to-address>
+  <from-address>store@einnovation.com</from-address>
+  <email-layout>/store/thanksemail.html</email-layout>
+  <order-layout>/store/orderemail.html</order-layout>
+
+  <shipping-method id="electronic-delivery" description="Electronic Delivery" costs="0" hidden="true" />
+<weight-shipping-method id="1" costs="1.99" percentageCosts="10" description="St
+andard Delivery (3-5 working days)" />
+<weight-shipping-method id="2" costs="2.99" percentageCosts="20" description="Ex
+press Delivery (1-2 working days)" />
+  <weight-shipping-method id="5" description="UPS next day air"	lowerThreshold="3" upperThreshold="10" costs="3"/>
+
+<uses-po-numbers>false</uses-po-numbers>
+
+<display-terms-conditions>true</display-terms-conditions>
+<allow-duplicate-accounts>true</allow-duplicate-accounts>
+<allow-special-request>false</allow-special-request>
+  	  	  	  	
+  	  	  	  	
+  <uses-po-numbers>true</uses-po-numbers>
+  <display-terms-conditions>false</display-terms-conditions>
+  <uses-bill-me-later>false</uses-bill-me-later>
+  <allow-duplicate-accounts>true</allow-duplicate-accounts>
+  
+</store>

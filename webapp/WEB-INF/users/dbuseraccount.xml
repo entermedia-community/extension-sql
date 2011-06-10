@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<user>
+  <user-name>dbuseraccount</user-name>
+  <password>openedit</password>
+  <creation-date>1146231775778</creation-date>
+  <!-- 
+  <properties>
+  		   <property name="dbusername" value="root"/>
+  		   <property name="dburl" value="jdbc:mysql://localhost/statefarminventory"/>
+  		   <property name="dbclass" value="com.mysql.jdbc.Driver"/>
+  </properties>
+   -->
+   <properties>
+  		   <property name="dbusername" value="sa"/>
+  		   <property name="dburl" value="jdbc:jtds:sqlserver://localhost:1433/statefarminventory"/>
+  		   <property name="dbclass" value="net.sourceforge.jtds.jdbc.Driver"/>
+  </properties>
+  <group id="powerusers"/>
+</user>

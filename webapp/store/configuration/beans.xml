@@ -1,0 +1,21 @@
+<beans>
+
+<!-- Archive -->
+<bean  id="productSearcher" bean="productDbSearcher" />
+<bean  id="productArchive" bean="productDbArchive" />
+<bean  id="categorySearcher" bean="categoryDbSearcher" />
+<bean  id="companySearcher" bean="dynamicDbSearcher" />
+<bean  id="reviewersSearcher" bean="dynamicDbSearcher" />
+<bean  id="mediatypeSearcher" bean="dynamicDbSearcher" />
+<bean  id="productcategorySearcher" bean="dynamicDbSearcher" />
+
+
+<!-- eCommerce -->
+<bean  id="order" bean="orderDbSearcher" />
+<bean  id="catalogImportConverter" bean="assetCompositeConverter" />
+
+<!-- OpenEdit -->
+<bean  id="user" bean="userDbSearcher" />
+<bean  id="group" bean="groupDbSearcher" />
+
+</beans>

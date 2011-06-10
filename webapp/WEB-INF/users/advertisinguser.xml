@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<user enabled="true">
+  <user-name>advertisinguser</user-name>
+  <password>DES:l6vrTw/pHtSNslzTfCBbXg==</password>
+  <creation-date>1229915119561</creation-date>
+  <properties>
+    <property name="enabled" value="true"/>
+    <property name="lastName" value="User"/>
+    <property name="searchtype" value="categories"/>
+    <property name="email" value=""/>
+    <property name="screenName" value=""/>
+    <property name="firstName" value="Ad"/>
+  </properties>
+  <group id="advertisingedit"/>
+</user>
