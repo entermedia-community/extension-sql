@@ -206,7 +206,7 @@ public class AssetDbSearcher extends BaseDbSearcher implements ProductSearcher
 	{
 	}
 
-	public void saveData(Object inData, User inUser)
+	public void saveData(Data inData, User inUser)
 	{
 		getDbConnection().saveData((Data)inData, getDataMapper(), inUser);
 		

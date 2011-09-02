@@ -294,7 +294,7 @@ public class BaseDbSearcher extends BaseSearcher
 	{
 		return (Data)getDataMapper().createNewBean();
 	}
-	public void saveData(Object inData, User inUser)
+	public void saveData(Data inData, User inUser)
 	{
 		Data data = (Data)inData;
 		getDbConnection().saveData(data, getDataMapper(), inUser);
