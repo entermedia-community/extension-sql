@@ -1,4 +1,4 @@
-package org.openedit.db.assets;
+package org.openedit.db.assets.old;
 
 import java.util.ArrayList;
 import java.util.HashMap;

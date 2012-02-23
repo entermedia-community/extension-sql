@@ -388,4 +388,15 @@ public class DataMapper
 		return sql.toString();
 	}
 
+	public String toDelete(String inId)
+	{
+		StringBuffer sql = new StringBuffer();
+		sql.append("DELETE FROM " + getSearchType());
+		//sql.append(" WHERE id = '1'");
+		//sql.append("select * from " + getSearchType() );
+		sql.append(" WHERE ");
+		addId(sql, inId);
+		return sql.toString();
+	}
+
 }

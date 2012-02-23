@@ -14,7 +14,7 @@ import com.openedit.OpenEditRuntimeException;
 import com.openedit.hittracker.HitTracker;
 import com.openedit.users.User;
 
-public class DbConnection
+public class DbConnection  
 {
 	protected ConnectionPool fieldConnectionPool;
 	private static final Log log = LogFactory.getLog(DbConnection.class);
@@ -81,12 +81,6 @@ public class DbConnection
 		{
 			getConnectionPool().close(con); //I think this auto closes the statements
 		}
-		
-		
-    	
-		
-		
-		
 	}
 
 	protected int runSql(DataMapper inMapper, String sqlinsert)
@@ -110,6 +104,13 @@ public class DbConnection
 		}
 	}
 	
+	public int delete(DataMapper inMapper, String inId)
+	{
+		Connection 	con  =  getConnection(inMapper);
+		String sql = inMapper.toDelete(inId);
+		int count  = runSql(inMapper,sql);
+		return count;
+	}
 	
 	
 	
@@ -186,5 +187,4 @@ public class DbConnection
 		return con;
 	}
 
-	
 }

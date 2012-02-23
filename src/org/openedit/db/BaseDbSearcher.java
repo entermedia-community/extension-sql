@@ -1,6 +1,8 @@
 package org.openedit.db;
 
+import java.io.File;
 import java.sql.ResultSet;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
@@ -12,6 +14,7 @@ import org.openedit.data.PropertyDetail;
 import org.openedit.data.PropertyDetails;
 import org.openedit.db.util.DataMapper;
 import org.openedit.db.util.DbConnection;
+import org.openedit.entermedia.search.DataConnector;
 import org.openedit.xml.ElementData;
 import org.openedit.xml.XmlArchive;
 import org.openedit.xml.XmlFile;
@@ -30,7 +33,7 @@ import com.openedit.users.User;
  * @author cburkey
  */
 
-public class BaseDbSearcher extends BaseSearcher
+public class BaseDbSearcher extends BaseSearcher implements DataConnector 
 {
 	private static final Log log = org.apache.commons.logging.LogFactory.getLog(BaseDbSearcher.class);
 	protected DbConnection fieldDbConnection;
@@ -212,18 +215,25 @@ public class BaseDbSearcher extends BaseSearcher
 	}
 	public void delete(Data inData, User inUser)
 	{
-		// TODO Auto-generated method stub
+		delete(inData.getId());
 		
 	}
+	public void delete(String inId)
+	{
+		getDbConnection().delete(getDataMapper(), inId);
+	}
+	
 	public void deleteAll(User inUser)
 	{
-		// TODO Auto-generated method stub
-		
+		throw new OpenEditException("not implemented");
 	}
 	public void saveAllData(List inAll, User inUser)
 	{
-		// TODO Auto-generated method stub
-		
+		for (Iterator iterator = inAll.iterator(); iterator.hasNext();)
+		{
+			Data data = (Data) iterator.next();
+			saveData(data, inUser);
+		}
 	}
 
 	public DataMapper getDataMapper()
@@ -329,6 +339,51 @@ public class BaseDbSearcher extends BaseSearcher
 			throw new OpenEditException(e);
 		}
 		getDataMapper().getBeanCreator().setDataClass(cl);
+		
+	}
+	public void saveAllData(Collection<Data> inAll, User inUser)
+	{
+		for (Iterator iterator = inAll.iterator(); iterator.hasNext();)
+		{
+			Data data = (Data) iterator.next();
+			saveData(data, inUser);
+		}
+		
+	}
+	@Override
+	public void deleteFromIndex(String inId)
+	{
+		delete(inId);
+	}
+	@Override
+	public void deleteFromIndex(HitTracker inOld)
+	{
+		for (Iterator iterator = inOld.iterator(); iterator.hasNext();)
+		{
+			Data data = (Data) iterator.next();
+			delete(data.getId());
+		}
+	}
+	@Override
+	public void updateIndex(Data inOne)
+	{
+		saveData(inOne,	null);
+	}
+	@Override
+	public void updateIndex(Collection<Data> inAll, boolean inB)
+	{
+		saveAllData(inAll, null);
+	}
+	@Override
+	public void flush()
+	{
+		//not needed for sql
+		
+	}
+	@Override
+	public void setRootDirectory(File inRoot)
+	{
+		//not needed for SQL
 		
 	}
 }
