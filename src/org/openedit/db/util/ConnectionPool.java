@@ -20,6 +20,7 @@ import org.apache.commons.pool.impl.GenericObjectPool;
 import com.openedit.OpenEditRuntimeException;
 import com.openedit.users.User;
 import com.openedit.users.UserManager;
+import com.openedit.util.PathUtilities;
 
 public class ConnectionPool
 {
@@ -46,7 +47,9 @@ public class ConnectionPool
     		{
     			synchronized (getConnectionFactories())
 				{
-    				User dbaccount = getUserManager().getUser("dbuseraccount." + inCatalogId);
+    				String id = "dbuseraccount." + inCatalogId;
+    				id = PathUtilities.makeId(id).toLowerCase();
+    				User dbaccount = getUserManager().getUser(id);
     				if( dbaccount == null)
     				{
     					dbaccount = getUserManager().getUser("dbuseraccount");
