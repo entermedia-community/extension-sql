@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project basedir="." default="default" name="extension-sql">
 
-  <target name="default" depends="clean, source, update-dependencies, compile,  jar, javadoc, zip, publish"/>
+  <target name="default" depends="clean, source, update-dependencies, compile,  jar, zip, publish"/>
   <target name="dependency" depends="default"/>
    
     <property name="appname" value="${ant.project.name}"/>
@@ -168,7 +168,7 @@
 		</javadoc>
     </target>
 	
-	<target name="publish" depends="javadoc, zip">
+	<target name="publish" depends="zip">
 		  
 			<!-- publish results to anthill -->
 		 	<copy file="${deployDir}/builds/${appname}.zip" overwrite="true"
@@ -180,12 +180,6 @@
 				 		      <filter token="BRANCH" value="${branch}"/>
 				 		    </filterset>
 		 	</copy>	
-		 	<copy file="${etc}/install.xml" overwrite="true"
-			        tofile="${deployDir}/install.xml">
-			 <filterset>
-				 		      <filter token="BRANCH" value="${branch}"/>
-						 		    </filterset>
-			 		</copy>
 
 		
 		
