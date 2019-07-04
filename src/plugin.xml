@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 
 <beans>
 
-	<bean id="dynamicDbSearcher" class="org.openedit.db.BaseDbSearcher" singleton="false">
+	<bean id="dynamicDbSearcher" class="org.openedit.db.BaseDbSearcher" scope="prototype">
 	  	<property name="dbConnection"><ref bean="dbConnection" /></property>
 	  	<property name="moduleManager"><ref bean="moduleManager" /></property>
 		<property name="xmlArchive"><ref bean="xmlArchive"/></property>
 	 </bean>
 
-	<bean id="relatedDbSearcher" class="org.openedit.db.BaseDbSearcher" singleton="false">
+	<bean id="relatedDbSearcher" class="org.openedit.db.BaseDbSearcher" scope="prototype">
 	  	<property name="dbConnection"><ref bean="dbConnection" /></property>
 	  	<property name="moduleManager"><ref bean="moduleManager" /></property>
 	  	<property name="dataClass"><value>org.openedit.store.products.RelatedProduct</value></property>
@@ -23,7 +22,7 @@
 			<property name="userManager"><ref bean="userManager"/></property>		
   </bean> 
 
-  <bean id="dataMapper" class="org.openedit.db.util.DataMapper" singleton="false">
+  <bean id="dataMapper" class="org.openedit.db.util.DataMapper" scope="prototype">
   	<property name="sqlFormatter"><ref bean="sqlFormatter" /></property>
   </bean> 
 
@@ -32,29 +31,29 @@
 		<property name="userManager"><ref bean="userManager"/></property>		
   </bean> 
 
-  <bean id="categoryDbArchive" class="org.openedit.db.store.CategoryDbArchive" singleton="false">
+  <bean id="categoryDbArchive" class="org.openedit.db.store.CategoryDbArchive" scope="prototype">
   	<property name="dbConnection"><ref bean="dbConnection" /></property>
   </bean> 
 
-  <bean id="productDbArchive" class="org.openedit.db.store.ProductDbArchive" singleton="false">
+  <bean id="productDbArchive" class="org.openedit.db.store.ProductDbArchive" scope="prototype">
   	<property name="dbConnection"><ref bean="dbConnection" /></property>
   	<property name="searcherManager"><ref bean="searcherManager" /></property>
   	<property name="pageManager"><ref bean="pageManager" /></property>
   	
   </bean> 
 
-  <bean id="productDbSearcher" class="org.openedit.db.store.ProductDbSearcher" singleton="false">
+  <bean id="productDbSearcher" class="org.openedit.db.store.ProductDbSearcher" scope="prototype">
   	<property name="dbConnection"><ref bean="dbConnection" /></property>
   	<property name="moduleManager"><ref bean="moduleManager" /></property>
   </bean>
 
 
-  <bean id="userDbSearcher" class="org.openedit.db.accounts.DbUserSearcher" singleton="false">
+  <bean id="userDbSearcher" class="org.openedit.db.accounts.DbUserSearcher" scope="prototype">
   	<property name="dbConnection"><ref bean="dbConnection" /></property>
   	<property name="fallBackSearcher"><ref bean="fileUserSearcher" /></property>
   	<property name="moduleManager"><ref bean="moduleManager" /></property>
   </bean>
-  <bean id="groupDbSearcher" class="org.openedit.db.accounts.DbGroupSearcher" singleton="false">
+  <bean id="groupDbSearcher" class="org.openedit.db.accounts.DbGroupSearcher" scope="prototype">
   	<property name="dbConnection"><ref bean="dbConnection" /></property>
   	<property name="fallBackSearcher"><ref bean="fileGroupSearcher" /></property>
   	<property name="moduleManager"><ref bean="moduleManager" /></property>

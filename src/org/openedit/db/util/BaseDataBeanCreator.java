@@ -1,9 +1,8 @@
 package org.openedit.db.util;
 
 import org.openedit.Data;
+import org.openedit.OpenEditRuntimeException;
 import org.openedit.data.BaseData;
-
-import com.openedit.OpenEditRuntimeException;
 
 public class BaseDataBeanCreator
 {

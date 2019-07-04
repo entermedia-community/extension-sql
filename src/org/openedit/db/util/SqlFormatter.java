@@ -1,7 +1,6 @@
 package org.openedit.db.util;
 
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -11,14 +10,13 @@ import java.util.Map;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.dom4j.Element;
+import org.openedit.OpenEditRuntimeException;
 import org.openedit.data.PropertyDetail;
+import org.openedit.users.User;
+import org.openedit.users.UserManager;
 import org.openedit.util.DateStorageUtil;
 import org.openedit.xml.XmlArchive;
 import org.openedit.xml.XmlFile;
-
-import com.openedit.OpenEditRuntimeException;
-import com.openedit.users.User;
-import com.openedit.users.UserManager;
 
 public class SqlFormatter
 {
@@ -111,13 +109,15 @@ public class SqlFormatter
 	{
 		if (fieldDataTypeLookUp == null)
 		{
-			fieldDataTypeLookUp = getXmlArchive().getXml("/openedit/configuration/mapping/" + getType() + ".xml");
+			fieldDataTypeLookUp = getXmlArchive().getXml("/system/data/mapping/" + getType() + ".xml");
 			
 		}
 		return fieldDataTypeLookUp;
 	}
 	private String getType()
 	{
+		return "mysql";
+		/*
 		User dbuser = getUserManager().getUser("dbuseraccount");
 		
 		if( dbuser == null)
@@ -138,6 +138,7 @@ public class SqlFormatter
 			}
 		}
 		return type;
+		*/
 	}
 	public void setDataTypeLookUp(XmlFile inDataTypeLookUp)
 	{

@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	
+<class name="org.openedit.store.Product" table="products">
+	<id name="id" type="string" />
+	<property name="name" type="string"/>
+	<!-- property name="stuff" type="string" access="org.openedit.db.store.ProductAccessor"/ -->       
+	<bag name="categories" table="productcategory" lazy="true">
+	        <key column="productid"/>
+	        <many-to-many column="categoryid" class="org.openedit.store.Category"/>
+	        <cache usage="read-write" />	        
+	</bag>
+	<bag name="inventoryItems" lazy="true" cascade="all">
+	   <key column="productId"/>
+	   <one-to-many class="org.openedit.store.InventoryItem"/>
+	</bag>     
+	<cache usage="read-write" />
+	
+</class> 
+
+<class name="org.openedit.store.Category" table="categories">
+	<id name="id" type="string" />
+	<property name="name" type="string"/>
+	<property name="parentId" type="string"/>       
+	<!--bag name="children" lazy="true"  > This was causing too many trips to the database
+	   <key column="parentId"/>
+	   <one-to-many class="org.openedit.store.Category"/>
+	</bag 
+    <many-to-one name="parentCatalog" class="org.openedit.store.Category" lazy="true" column="parentId" />
+    -->
+	<cache usage="read-write" />
+</class> 
+
+<class name="org.openedit.store.InventoryItem" table="inventoryitems">
+	<id name="sku" type="string" />
+    <many-to-one name="product" class="org.openedit.store.Product" lazy="false" column="productId"/>	
+	<cache usage="read-write" />
+</class>
+
+<class entity-name="company" table="companies">
+	<id name="id" type="int" >
+                <generator class="native"/>
+        </id>
+	<property name="name" type="string"/>
+	<cache usage="read-write" />
+</class>
+
+
+<class name="com.openedit.users.BaseUser" table="openedit_users">
+	<id name="userName" type="string" column='username'/>
+	<bag name="groups" table="openedit_usersgroups" lazy="true" cascade="all">
+	        <key column="userid"/>
+	        <many-to-many column="groupid" class="com.openedit.users.BaseGroup"/>
+	        <cache usage="read-write" />	        
+	</bag>
+	<cache usage="read-write" />
+</class>
+
+<class name="com.openedit.users.BaseGroup" table="openedit_groups">
+	<id name="id" type="string" column='id'/>
+	<cache usage="read-write" />
+
+	<bag name="permissions" lazy="false" cascade="all"  >
+	   <key column="groupid"/>
+	   <one-to-many class="com.openedit.users.EnabledPermission"/>
+	</bag>     
+</class>
+
+<class name="com.openedit.users.EnabledPermission" table="openedit_group_permissions">
+	<id name="id" type="int" >
+                <generator class="native"/>
+        </id>
+	<property name="permissionId" column="permissionid" type="string" />
+	<property name="groupId" column="groupid" type="string" />
+	<cache usage="read-write" />
+</class>
+
+
+</hibernate-mapping>

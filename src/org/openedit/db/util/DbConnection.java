@@ -9,10 +9,9 @@ import java.sql.Statement;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openedit.Data;
-
-import com.openedit.OpenEditRuntimeException;
-import com.openedit.hittracker.HitTracker;
-import com.openedit.users.User;
+import org.openedit.OpenEditRuntimeException;
+import org.openedit.hittracker.HitTracker;
+import org.openedit.users.User;
 
 public class DbConnection  
 {
@@ -162,7 +161,6 @@ public class DbConnection
 			Statement smt = con.createStatement();
 			ResultSet rset = smt.executeQuery(inSql);
 			tracker = new DbRowTracker(rset, inMapper, con); //We need to close this connection once data is all done
-			
 			tracker.size(); //Pulls all the records down for now
 			return tracker;
 		}

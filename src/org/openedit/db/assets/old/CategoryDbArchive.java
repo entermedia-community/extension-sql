@@ -8,14 +8,14 @@ import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.entermediadb.asset.BaseCategory;
+import org.entermediadb.asset.Category;
+import org.entermediadb.asset.CategoryArchive;
+import org.openedit.OpenEditException;
 import org.openedit.data.PropertyDetails;
 import org.openedit.db.BaseDbSearcher;
-import org.openedit.entermedia.Category;
-import org.openedit.entermedia.CategoryArchive;
-
-import com.openedit.OpenEditException;
-import com.openedit.hittracker.HitTracker;
-import com.openedit.page.manage.PageManager;
+import org.openedit.hittracker.HitTracker;
+import org.openedit.page.manage.PageManager;
 
 public class CategoryDbArchive extends BaseDbSearcher implements CategoryArchive
 {
@@ -94,7 +94,7 @@ public class CategoryDbArchive extends BaseDbSearcher implements CategoryArchive
 			HitTracker categories = getDbConnection().search("select * from categories", getDataMapper());
 			if( categories.size() == 0)
 			{
-				fieldRootCatalog = new Category("index","Index");
+				fieldRootCatalog = new BaseCategory("index","Index");
 				saveData(fieldRootCatalog, null);
 			}
 			else
@@ -193,7 +193,7 @@ public class CategoryDbArchive extends BaseDbSearcher implements CategoryArchive
 
 	public Category createNewCategory(String inLabel)
 	{
-		Category cat = new Category();
+		Category cat = new BaseCategory();
 		cat.setName(inLabel);
 		return cat;
 	}

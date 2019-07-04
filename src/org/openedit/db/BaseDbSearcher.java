@@ -8,23 +8,22 @@ import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.dom4j.Element;
+import org.entermediadb.asset.search.DataConnector;
 import org.openedit.Data;
+import org.openedit.ModuleManager;
+import org.openedit.OpenEditException;
 import org.openedit.data.BaseSearcher;
 import org.openedit.data.PropertyDetail;
 import org.openedit.data.PropertyDetails;
 import org.openedit.db.util.DataMapper;
 import org.openedit.db.util.DbConnection;
-import org.openedit.entermedia.search.DataConnector;
+import org.openedit.hittracker.HitTracker;
+import org.openedit.hittracker.SearchQuery;
+import org.openedit.hittracker.Term;
+import org.openedit.users.User;
 import org.openedit.xml.ElementData;
 import org.openedit.xml.XmlArchive;
 import org.openedit.xml.XmlFile;
-
-import com.openedit.ModuleManager;
-import com.openedit.OpenEditException;
-import com.openedit.hittracker.HitTracker;
-import com.openedit.hittracker.SearchQuery;
-import com.openedit.hittracker.Term;
-import com.openedit.users.User;
 
 /**
  * Searcher - Public API
@@ -38,7 +37,7 @@ public class BaseDbSearcher extends BaseSearcher implements DataConnector
 	private static final Log log = org.apache.commons.logging.LogFactory.getLog(BaseDbSearcher.class);
 	protected DbConnection fieldDbConnection;
 	protected DataMapper fieldDataMapper;
-	protected ModuleManager fieldModuleManager;
+	protected org.openedit.ModuleManager fieldModuleManager;
 	protected XmlArchive fieldXmlArchive;
 	
 	/**
@@ -168,6 +167,7 @@ public class BaseDbSearcher extends BaseSearcher implements DataConnector
 			}
 		}
 		HitTracker tracker = getDbConnection().search(sql.toString(), getDataMapper());
+		tracker.setSearcher(this);
 		tracker.setSearchQuery(inQuery);
 		log.info("final query: " + sql.toString());
 		return tracker;
@@ -369,11 +369,7 @@ public class BaseDbSearcher extends BaseSearcher implements DataConnector
 	{
 		saveData(inOne,	null);
 	}
-	@Override
-	public void updateIndex(Collection<Data> inAll, boolean inB)
-	{
-		saveAllData(inAll, null);
-	}
+
 	@Override
 	public void flush()
 	{
@@ -384,6 +380,24 @@ public class BaseDbSearcher extends BaseSearcher implements DataConnector
 	public void setRootDirectory(File inRoot)
 	{
 		//not needed for SQL
+		
+	}
+	@Override
+	public Data getDataBySourcePath(String inSourcePath)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Data getDataBySourcePath(String inSourcePath, boolean inAutocreate)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public void updateIndex(Collection<Data> inBuffer, User inUser)
+	{
+		// TODO Auto-generated method stub
 		
 	}
 }

@@ -9,9 +9,8 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.openedit.Data;
-
-import com.openedit.OpenEditRuntimeException;
-import com.openedit.hittracker.HitTracker;
+import org.openedit.OpenEditRuntimeException;
+import org.openedit.hittracker.HitTracker;
 
 public class DbRowTracker extends HitTracker
 {

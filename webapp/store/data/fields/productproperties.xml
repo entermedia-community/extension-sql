@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<properties>
+  <property id="id" text="New" editable="true" >Id</property>
+  <property id="name" text="New" editable="true" >Name</property>
+
+<!-- the query filters out any extra information -->
+  <property id="category" type="textjoin" externalid="productcategory.categoryid" query="productcategory.productid LIKE product.id"  >Categories</property>
+  <property id="reviewers.reviewstatus" type="textjoin" query="reviewers.productid LIKE  product.id" >Reviewers Status</property>
+  <property id="productstates.stateid" type="textjoin" query="productstates.productid LIKE product.id" >States</property>
+
+  <property id="junk" text="New" editable="true" list="true">New235</property>
+  <property id="stuff" index="true" editable="true">Stuff</property>
+  <property id="approved" index="true" editable="true" boolean="true" >Approved</property>
+  <property id="company" editable="true" list="true" >Company</property>
+  <property id="owner" index="true" type="list" catalogid="openedit" listid="user" keyword="true" stored="true" editable="true" query="groups:developers">Developer</property>
+    <property id="mediatype" text="New" editable="true" list="true">Media Type</property>
+</properties>

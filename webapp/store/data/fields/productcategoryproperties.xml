@@ -1,0 +1,6 @@
+
+<properties>
+  <property id="id" type="id" >Id</property>
+  <property id="productid" type="text">Product ID</property>
+  <property id="categoryid" type="text">Category</property>
+</properties>

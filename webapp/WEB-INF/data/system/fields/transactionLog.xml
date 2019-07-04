@@ -1,0 +1,11 @@
+
+<properties>
+  <property id="searchtype" index="true" filter="false" deleted="false" editable="true" stored="true" keyword="false">New
+    <name>
+      <language id="de"><![CDATA[Suchart]]></language>
+      <language id="en"><![CDATA[Search Type]]></language>
+      <language id="es"><![CDATA[Tipo de búsqueda]]></language>
+      <language id="fr"><![CDATA[Type de recherche]]></language>
+    </name>
+  </property>
+</properties>

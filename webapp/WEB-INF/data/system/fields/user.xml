@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<properties> 
+  <property id="productlegal" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[productlegal]]></language> 
+    </name> 
+  </property>  
+  <property id="productorderingoptions" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[productorderingoptions]]></language> 
+    </name> 
+  </property>  
+  <property id="photooptions" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[photooptions]]></language> 
+    </name> 
+  </property>  
+  <property id="datalevel" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[datalevel]]></language> 
+    </name> 
+  </property>  
+  <property id="resultstype" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[resultstype]]></language> 
+    </name> 
+  </property>  
+  <property id="resulttype" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[resulttype]]></language> 
+    </name> 
+  </property>  
+  <property id="catalogid" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[CatalogID]]></language> 
+    </name> 
+  </property>  
+  <property id="defaultcolor" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[defaultcolor]]></language> 
+    </name> 
+  </property>  
+  <property id="showdebug" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[showdebug]]></language> 
+    </name> 
+  </property>  
+  <property id="openadmintoolbar" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[openadmintoolbar]]></language> 
+    </name> 
+  </property>  
+  <property id="virtual" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[virtual]]></language> 
+    </name> 
+  </property>  
+  <property id="oe_edit_mode" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[oe_edit_mode]]></language> 
+    </name> 
+  </property>  
+  <property id="productzones" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[productzones]]></language> 
+    </name> 
+  </property>  
+  <property id="showfilter" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[showfilter]]></language> 
+    </name> 
+  </property>  
+  <property id="mailingcountry" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[mailingcountry]]></language> 
+    </name> 
+  </property>  
+  <property id="productavailability" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[productavailability]]></language> 
+    </name> 
+  </property>  
+  <property id="productreviewers" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[productreviewers]]></language> 
+    </name> 
+  </property>  
+  <property id="searchtype" index="true" filter="false" deleted="false" editable="true" stored="true" keyword="false">New 
+    <name> 
+      <language id="de"><![CDATA[Suchart]]></language>  
+      <language id="en"><![CDATA[Search Type]]></language>  
+      <language id="es"><![CDATA[Tipo de búsqueda]]></language>  
+      <language id="fr"><![CDATA[Type de recherche]]></language> 
+    </name> 
+  </property>  
+  <property id="productexpirations" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[productexpirations]]></language> 
+    </name> 
+  </property>  
+  <property id="retention" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[retention]]></language> 
+    </name> 
+  </property>  
+  <property id="officecountry" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[officecountry]]></language> 
+    </name> 
+  </property>  
+  <property id="productvpa" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[productvpa]]></language> 
+    </name> 
+  </property>  
+  <property id="orderingcost" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[orderingcost]]></language> 
+    </name> 
+  </property>  
+  <property id="productspecialrestrictions" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[productspecialrestrictions]]></language> 
+    </name> 
+  </property>  
+  <property id="dburl" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[dburl]]></language> 
+    </name> 
+  </property>  
+  <property id="dbusername" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[dbusername]]></language> 
+    </name> 
+  </property>  
+  <property id="dbclass" index="true" deleted="false" editable="true" stored="true">New
+    <name>
+      <language id="en"><![CDATA[dbclass]]></language>
+    </name>
+  </property>
+</properties>

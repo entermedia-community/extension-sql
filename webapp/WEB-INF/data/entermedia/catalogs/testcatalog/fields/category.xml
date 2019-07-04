@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<properties> 
+  <property id="name" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[name]]></language> 
+    </name> 
+  </property>  
+  <property id="id" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[id]]></language> 
+    </name> 
+  </property>  
+  <property id="categorypath" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[categorypath]]></language> 
+    </name> 
+  </property>  
+  <property id="parents" index="true" deleted="false" editable="true" stored="true">New 
+    <name> 
+      <language id="en"><![CDATA[parents]]></language> 
+    </name> 
+  </property>  
+  <property id="parentid" index="true" deleted="false" editable="true" stored="true">New
+    <name>
+      <language id="en"><![CDATA[parentid]]></language>
+    </name>
+  </property>
+</properties>

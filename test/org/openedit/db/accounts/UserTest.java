@@ -1,14 +1,13 @@
 package org.openedit.db.accounts;
 
+import org.entermediadb.asset.modules.AdminModule;
+import org.openedit.BaseTestCase;
+import org.openedit.WebPageRequest;
 import org.openedit.data.SearcherManager;
-import org.openedit.entermedia.modules.AdminModule;
+import org.openedit.users.Group;
 import org.openedit.users.GroupSearcher;
+import org.openedit.users.User;
 import org.openedit.users.UserSearcher;
-
-import com.openedit.BaseTestCase;
-import com.openedit.WebPageRequest;
-import com.openedit.users.Group;
-import com.openedit.users.User;
 
 public class UserTest extends BaseTestCase
 {

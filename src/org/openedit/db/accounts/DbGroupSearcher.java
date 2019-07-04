@@ -2,10 +2,9 @@ package org.openedit.db.accounts;
 
 import org.openedit.Data;
 import org.openedit.db.BaseDbSearcher;
+import org.openedit.users.BaseGroup;
+import org.openedit.users.Group;
 import org.openedit.users.GroupSearcher;
-
-import com.openedit.users.BaseGroup;
-import com.openedit.users.Group;
 
 public class DbGroupSearcher extends BaseDbSearcher implements GroupSearcher
 {

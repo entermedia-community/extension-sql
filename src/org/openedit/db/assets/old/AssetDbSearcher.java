@@ -1,27 +1,7 @@
 package org.openedit.db.assets.old;
 
-import java.util.List;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.openedit.Data;
-import org.openedit.db.BaseDbSearcher;
-import org.openedit.db.util.BaseDataBeanCreator;
-import org.openedit.db.util.DataMapper;
-import org.openedit.entermedia.Asset;
-import org.openedit.entermedia.Category;
-import org.openedit.entermedia.MediaArchive;
-import org.openedit.entermedia.search.DataConnector;
-import org.openedit.entermedia.search.SearchFilter;
-import org.openedit.links.Link;
-
-import com.openedit.OpenEditException;
-import com.openedit.WebPageRequest;
-import com.openedit.hittracker.HitTracker;
-import com.openedit.hittracker.SearchQuery;
-import com.openedit.page.Page;
-import com.openedit.users.User;
-import com.openedit.util.PathUtilities;
 
 public class AssetDbSearcher //extends BaseDbSearcher implements DataConnector 
 {

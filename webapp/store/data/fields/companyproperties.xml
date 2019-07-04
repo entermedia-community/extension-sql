@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<properties>
+  <property id="id" type="id" index="true" editable="true"  >Id</property>
+  <property id="name" index="true" editable="true"  >Name</property>
+  <property id="state" index="true" editable="true">State</property>
+  <property id="zip" index="true" editable="true">Zip</property>
+</properties>
+ 

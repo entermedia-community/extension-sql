@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<user enabled="true">
+  <user-name><![CDATA[dbuseraccount_store]]></user-name>
+  <password><![CDATA[my-secret-pw]]></password>
+  <properties>
+    <property name=".version" value="1"/>
+    <property name="firstName" value="666"/>
+    <property name="lastName" value="666"/>
+    <property name="creationdate" value="2019-07-03 16:19:04 -0400"/>
+    <property name="password" value="DES:OEmTW0VSmZM="/>
+    <property name="virtual" value="false"/>
+    <property name="dbusername" value="root"/>
+    <property name="dburl"  value="jdbc:mysql://localhost/store?user=root&amp;password=my-secret-pw" />
+    <property name="dbclass" value="com.mysql.jdbc.Driver"/>
+    <property name="email" value="666"/>
+    <property name="enabled" value="true"/>
+  </properties>
+</user>

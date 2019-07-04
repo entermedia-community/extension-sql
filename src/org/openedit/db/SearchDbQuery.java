@@ -2,9 +2,8 @@ package org.openedit.db;
 
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
-
-import com.openedit.hittracker.SearchQuery;
-import com.openedit.hittracker.Term;
+import org.openedit.hittracker.SearchQuery;
+import org.openedit.hittracker.Term;
 
 public class SearchDbQuery extends SearchQuery
 {

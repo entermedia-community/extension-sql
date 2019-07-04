@@ -2,19 +2,19 @@ package org.openedit.store.db;
 
 import java.util.Collection;
 
+import org.entermediadb.asset.BaseCategory;
+import org.entermediadb.asset.BaseEnterMediaTest;
+import org.entermediadb.asset.Category;
+import org.entermediadb.asset.CategoryArchive;
+import org.entermediadb.asset.search.AssetSearcher;
 import org.openedit.Data;
+import org.openedit.WebPageRequest;
 import org.openedit.data.BaseData;
 import org.openedit.data.PropertyDetail;
 import org.openedit.data.Searcher;
 import org.openedit.data.SearcherManager;
-import org.openedit.entermedia.BaseEnterMediaTest;
-import org.openedit.entermedia.Category;
-import org.openedit.entermedia.CategoryArchive;
-import org.openedit.entermedia.search.AssetSearcher;
-
-import com.openedit.WebPageRequest;
-import com.openedit.hittracker.HitTracker;
-import com.openedit.hittracker.SearchQuery;
+import org.openedit.hittracker.HitTracker;
+import org.openedit.hittracker.SearchQuery;
 
 public class DbTest extends BaseEnterMediaTest
 {
@@ -79,21 +79,21 @@ public class DbTest extends BaseEnterMediaTest
 		Category child = archive.getCategory("child1");
 		if( child == null)
 		{
-			child = archive.getRootCategory().addChild(new Category("child1","New Child"));
+			child = archive.getRootCategory().addChild(new BaseCategory("child1","New Child"));
 			archive.saveCategory(child);
 			
 		}
 		
 		assertTrue( index.hasChildren());
 
-//		assertNotNull( root );
-		archive.addChild(new Category("child" + index.getChildren().size(),"New Child"));
+		/*
+		archive.addChild(new BaseCategory("child" + index.getChildren().size(),"New Child"));
 		assertTrue( index.getChildren().size() > 0 );		
-//		
 		archive.setRootCategory(null);
 		Category root = archive.getRootCategory();
 		child = (Category)root.getChildren().iterator().next();
 		assertNotNull(child.getParentCategory());
+		*/
 	}
 
 

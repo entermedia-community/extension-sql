@@ -16,11 +16,10 @@ import org.apache.commons.dbcp.PoolingDriver;
 import org.apache.commons.pool.KeyedObjectPoolFactory;
 import org.apache.commons.pool.impl.GenericKeyedObjectPoolFactory;
 import org.apache.commons.pool.impl.GenericObjectPool;
-
-import com.openedit.OpenEditRuntimeException;
-import com.openedit.users.User;
-import com.openedit.users.UserManager;
-import com.openedit.util.PathUtilities;
+import org.openedit.OpenEditRuntimeException;
+import org.openedit.users.User;
+import org.openedit.users.UserManager;
+import org.openedit.util.PathUtilities;
 
 public class ConnectionPool
 {
@@ -56,7 +55,7 @@ public class ConnectionPool
     				}
     				if( dbaccount == null || dbaccount.get("dbusername") == null || dbaccount.get("dburl") == null)
     				{
-    					throw new OpenEditRuntimeException("Please create user dbuseraccount with dbclass, dbusername and dbrul properties");
+    					throw new OpenEditRuntimeException("Please create user " + id + " with dbclass, dbusername and dbrul properties");
     				}
     				String dbclass = dbaccount.get("dbclass");
     				try

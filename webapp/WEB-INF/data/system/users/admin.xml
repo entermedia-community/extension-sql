@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<user enabled="true">
+  <user-name><![CDATA[admin]]></user-name>
+  <password><![CDATA[DES:RwXptJkLSDQ=]]></password>
+  <properties>
+    <property name="lastName" value="Administrator6"/>
+    <property name=".version" value="23"/>
+    <property name="openadmintoolbar" value="true"/>
+    <property name="virtual" value="false"/>
+    <property name="productlegal" value="false"/>
+    <property name="productorderingoptions" value="false"/>
+    <property name="photooptions" value="false"/>
+    <property name="description" value="admin admin is cool The4467 Administrator6 cburkey@openedit.org "/>
+    <property name="oe_edit_mode" value="preview"/>
+    <property name="productzones" value="false"/>
+    <property name="enabled" value="true"/>
+    <property name="showfilter" value="false"/>
+    <property name="recordmodificationdate" value="2019-06-18T14:32:31.826Z"/>
+    <property name="mailingcountry" value="237"/>
+    <property name="password" value="DES:RwXptJkLSDQ="/>
+    <property name="productavailability" value="false"/>
+    <property name="productreviewers" value="false"/>
+    <property name="searchtype" value="categories"/>
+    <property name="screenname" value="admin is cool"/>
+    <property name="datalevel" value="advanced"/>
+    <property name="productexpirations" value="false"/>
+    <property name="mastereditclusterid" value="entermedia-em9clusterCB"/>
+    <property name="retention" value="false"/>
+    <property name="email" value="cburkey@openedit.org"/>
+    <property name="officecountry" value="237"/>
+    <property name="productvpa" value="false"/>
+    <property name="resultstype" value="thumbs"/>
+    <property name="lastlogin" value="2019-01-29T18:31:58.862Z"/>
+    <property name="assetportrait" value="AWrcnVv-ezjG1MnQXL8I"/>
+    <property name="groups" value="administrators"/>
+    <property name="resulttype" value="thumbs"/>
+    <property name="expiresin"/>
+    <property name="orderingcost" value="false"/>
+    <property name="firstName" value="The4467"/>
+    <property name="catalogid" value="system"/>
+    <property name="productspecialrestrictions" value="false"/>
+    <property name="defaultcolor" value="#00FFFF"/>
+    <property name="showdebug" value="false"/>
+  </properties>
+  <group id="administrators"/>
+</user>
