@@ -1,4 +1,4 @@
-<beans>
+<beans basedatatype="elastic">
 
 <!-- Archive -->
 <bean  id="productSearcher" bean="productDbSearcher" />
