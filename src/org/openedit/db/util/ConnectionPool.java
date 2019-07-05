@@ -13,6 +13,8 @@ import org.apache.commons.dbcp.ConnectionFactory;
 import org.apache.commons.dbcp.DriverManagerConnectionFactory;
 import org.apache.commons.dbcp.PoolableConnectionFactory;
 import org.apache.commons.dbcp.PoolingDriver;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.commons.pool.KeyedObjectPoolFactory;
 import org.apache.commons.pool.impl.GenericKeyedObjectPoolFactory;
 import org.apache.commons.pool.impl.GenericObjectPool;
@@ -25,6 +27,8 @@ public class ConnectionPool
 {
 	protected Map fieldConnectionFactories;
 	protected UserManager fieldUserManager;
+	private static final Log log = LogFactory.getLog(ConnectionPool.class);
+
 	
     public ConnectionPool() 
     {
@@ -68,6 +72,10 @@ public class ConnectionPool
 					}
     				String dbusername = dbaccount.get("dbusername");
     				String url = dbaccount.get("dburl");
+    				
+    				log.info("DB URL" +url );
+    				log.info("DB USERNAME" +dbusername );
+    				log.info("DB PWD" + dbaccount.getPassword());
     				
 		    		ConnectionFactory connectionFactory = new DriverManagerConnectionFactory( url, dbusername, getUserManager().decryptPassword(dbaccount));
 		
