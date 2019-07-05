@@ -1,9 +1,15 @@
+0.
+    <property name="dbusername" value="root"/>
+    <property name="dburl"  value="jdbc:mysql://localhost/store?user=root&amp;password=my-secret-pw" />
+    <property name="dbclass" value="com.mysql.jdbc.Driver"/>
+
 1. 
 
 sudo docker stop some-mysql; sudo docker rm some-mysql
 sudo docker run --name some-mysql -e MYSQL_ROOT_HOST=% -p 3306:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:latest
 sudo docker exec -it some-mysql mysql -uroot -pmy-secret-pw -e "CREATE DATABASE store" 
 sudo docker exec -it some-mysql mysql -uroot -pmy-secret-pw
+
 
 2. 
 

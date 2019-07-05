@@ -8,6 +8,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TimeZone;
+
 
 import org.apache.commons.dbcp.ConnectionFactory;
 import org.apache.commons.dbcp.DriverManagerConnectionFactory;
@@ -76,6 +78,11 @@ public class ConnectionPool
     				log.info("DB URL" +url );
     				log.info("DB USERNAME" +dbusername );
     				log.info("DB PWD" + dbaccount.getPassword());
+    				
+    				if( url.contains("mysql") && !url.contains("serverTimezone"))
+    				{
+    					url = url + "&serverTimezone=" + TimeZone.getDefault().getID();
+    				}
     				
 		    		ConnectionFactory connectionFactory = new DriverManagerConnectionFactory( url, dbusername, getUserManager().decryptPassword(dbaccount));
 		
