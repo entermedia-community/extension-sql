@@ -12,6 +12,7 @@ import org.entermediadb.asset.search.DataConnector;
 import org.openedit.Data;
 import org.openedit.ModuleManager;
 import org.openedit.OpenEditException;
+import org.openedit.WebPageRequest;
 import org.openedit.data.BaseSearcher;
 import org.openedit.data.PropertyDetail;
 import org.openedit.data.PropertyDetails;
@@ -187,6 +188,11 @@ public class BaseDbSearcher extends BaseSearcher implements DataConnector
 		return search(createSearchQuery());
 	}
 
+	public HitTracker getAllHits(WebPageRequest inReq)
+	{
+		return search(createSearchQuery());
+	}
+
 	public String getIndexId()
 	{
 		//in Case our list of properties is reloaded
@@ -256,9 +262,9 @@ public class BaseDbSearcher extends BaseSearcher implements DataConnector
 			}
 
 			fieldDataMapper.setPropertyDetails(details);
-			fieldDataMapper.createTable(getDbConnection().getConnection(fieldDataMapper));
+			//fieldDataMapper.createTable(getDbConnection().getConnection(fieldDataMapper));
 			//load up the lists data?
-			importLegacyData();
+			//importLegacyData();
 		}
 		return fieldDataMapper;
 	}
