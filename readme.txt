@@ -11,6 +11,11 @@ sudo docker exec -it some-mysql mysql -uroot -pmy-secret-pw -e "CREATE DATABASE 
 sudo docker exec -it some-mysql mysql -uroot -pmy-secret-pw
 
 
+sudo docker exec -it some-mysql mysql -uroot -pmy-secret-pw -e "use store;CREATE TABLE reviewersdb (id2 VARCHAR(30), name VARCHAR(30) );"
+sudo docker exec -it some-mysql mysql -uroot -pmy-secret-pw -e "use store;INSERT INTO reviewersdb (id2,name)
+VALUES ('123', 'Some value');"
+
+
 2. 
 
 Create data module with same name as table

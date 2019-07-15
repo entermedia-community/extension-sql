@@ -10,7 +10,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TimeZone;
 
-
 import org.apache.commons.dbcp.ConnectionFactory;
 import org.apache.commons.dbcp.DriverManagerConnectionFactory;
 import org.apache.commons.dbcp.PoolableConnectionFactory;
@@ -20,7 +19,7 @@ import org.apache.commons.logging.LogFactory;
 import org.apache.commons.pool.KeyedObjectPoolFactory;
 import org.apache.commons.pool.impl.GenericKeyedObjectPoolFactory;
 import org.apache.commons.pool.impl.GenericObjectPool;
-import org.openedit.OpenEditRuntimeException;
+import org.openedit.OpenEditException;
 import org.openedit.users.User;
 import org.openedit.users.UserManager;
 import org.openedit.util.PathUtilities;
@@ -61,7 +60,7 @@ public class ConnectionPool
     				}
     				if( dbaccount == null || dbaccount.get("dbusername") == null || dbaccount.get("dburl") == null)
     				{
-    					throw new OpenEditRuntimeException("Please create user " + id + " with dbclass, dbusername and dbrul properties");
+    					throw new OpenEditException("Please create user " + id + " with dbclass, dbusername and dbrul properties");
     				}
     				String dbclass = dbaccount.get("dbclass");
     				try
@@ -70,7 +69,7 @@ public class ConnectionPool
 					}
 					catch (ClassNotFoundException e)
 					{
-						throw new OpenEditRuntimeException(e);
+						throw new OpenEditException(e);
 					}
     				String dbusername = dbaccount.get("dbusername");
     				String url = dbaccount.get("dburl");
@@ -111,7 +110,7 @@ public class ConnectionPool
 			}
 			catch (SQLException e)
 			{
-				throw new OpenEditRuntimeException(e);
+				throw new OpenEditException(e);
 			}
     		return conn;
    	}

@@ -9,7 +9,7 @@ import java.sql.Statement;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openedit.Data;
-import org.openedit.OpenEditRuntimeException;
+import org.openedit.OpenEditException;
 import org.openedit.hittracker.HitTracker;
 import org.openedit.users.User;
 
@@ -74,7 +74,7 @@ public class DbConnection
 		}
 		catch ( SQLException ex)
 		{
-			throw new OpenEditRuntimeException(ex);
+			throw new OpenEditException(ex);
 		}
 		finally
 		{
@@ -95,7 +95,7 @@ public class DbConnection
 		}
 		catch ( SQLException ex)
 		{
-			throw new OpenEditRuntimeException(ex);
+			throw new OpenEditException(ex);
 		}
 		finally
 		{
@@ -142,7 +142,7 @@ public class DbConnection
 		catch( SQLException ex)
 		{
 			log.error(sql);
-			throw new OpenEditRuntimeException(ex);
+			throw new OpenEditException(ex);
 		}
 		finally
 		{
@@ -167,7 +167,7 @@ public class DbConnection
 		catch ( SQLException ex)
 		{
 			log.info("failed to run: " + inSql);
-			throw new OpenEditRuntimeException(ex);
+			throw new OpenEditException(ex);
 		}
 		finally
 		{

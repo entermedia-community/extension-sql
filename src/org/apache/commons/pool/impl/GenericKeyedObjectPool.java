@@ -17,10 +17,6 @@
 
 package org.apache.commons.pool.impl;
 
-import static org.apache.commons.pool.impl.GenericKeyedObjectPool.WHEN_EXHAUSTED_BLOCK;
-import static org.apache.commons.pool.impl.GenericKeyedObjectPool.WHEN_EXHAUSTED_FAIL;
-import static org.apache.commons.pool.impl.GenericKeyedObjectPool.WHEN_EXHAUSTED_GROW;
-
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;

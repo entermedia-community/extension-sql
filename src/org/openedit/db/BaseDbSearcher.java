@@ -262,9 +262,18 @@ public class BaseDbSearcher extends BaseSearcher implements DataConnector
 			}
 
 			fieldDataMapper.setPropertyDetails(details);
-			//fieldDataMapper.createTable(getDbConnection().getConnection(fieldDataMapper));
-			//load up the lists data?
-			//importLegacyData();
+/*
+			try
+			{
+				//fieldDataMapper.createTable(getDbConnection().getConnection(fieldDataMapper));
+				//load up the lists data?
+				//importLegacyData();
+			}
+			catch (Exception ex)
+			{
+				log.info("Lack permissions to modify table " + getSearchType());
+			}
+*/			
 		}
 		return fieldDataMapper;
 	}

@@ -13,7 +13,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openedit.CatalogEnabled;
 import org.openedit.Data;
-import org.openedit.OpenEditRuntimeException;
+import org.openedit.OpenEditException;
 import org.openedit.data.PropertyDetail;
 import org.openedit.data.PropertyDetails;
 import org.openedit.users.User;
@@ -60,17 +60,23 @@ public class DataMapper implements CatalogEnabled
 			for (int i = 0; i < getPropertyDetailsList().length; i++)
 			{
 				PropertyDetail detail = getPropertyDetailsList()[i];
-				if( !"textjoin".equals( detail.getType()) )
+				if( !detail.isDeleted() )
 				{
-					String col = detail.getId();
-					data.setProperty(col, inSet.getString(col));
+					if( !"textjoin".equals( detail.getType()) )
+					{
+						String col = detail.getId();
+						data.setProperty(col, inSet.getString(col));
+					}
 				}
 			}
-			getCache().put(data.getId(),data);
+			if( data.getId() != null)
+			{
+				getCache().put(data.getId(),data);
+			}
 		}
 		catch (SQLException e)
 		{
-			throw new OpenEditRuntimeException(e);
+			throw new OpenEditException(e);
 		}
 	}
 	
@@ -107,22 +113,41 @@ public class DataMapper implements CatalogEnabled
 		return getCache().get(inId);
 	}
 	
-	public Data populateData(String id, ResultSet inValues)
+	public Data populateData(ResultSet inValues)
 	{
-		Data  row = (Data)getCached(id);
-		boolean created = false;
-		if( row == null )
+		try
 		{
-			row = createNewBean();
-			created = true;
+			if(getPropertyDetails().getDetail("id") == null)
+			{
+				Data row = createNewBean();
+				readInto(inValues, row);	
+				return row;
+
+			}
+			else
+			{
+				String id = inValues.getString("id");
+		
+				Data  row = (Data)getCached(id);
+				boolean created = false;
+				if( row == null )
+				{
+					row = createNewBean();
+					created = true;
+				}
+				readInto(inValues, row);
+				if( created )
+				{
+					getBeanCreator().populateExtraData(row);
+				}
+				return row;
+			}
 		}
-		readInto(inValues, row);
-		if( created )
+		catch ( SQLException  ex)
 		{
-			getBeanCreator().populateExtraData(row);
+			throw new OpenEditException(ex);
 		}
 
-		return row;
 	}
 
 
@@ -177,7 +202,8 @@ public class DataMapper implements CatalogEnabled
 			PropertyDetail detail = details.getDetail("id");
 			if(detail  == null)
 			{
-				throw new OpenEditRuntimeException("You must declare an id column for DB work");
+				//throw new OpenEditRuntimeException("You must declare an id column for DB work");
+				log.info("No ID column defined " + getSearchType());
 			}
 			log.info("Creating table for " + searchtype);
 			String sql = getSqlFormatter().toCreateTable(searchtype, detail);
@@ -206,7 +232,7 @@ public class DataMapper implements CatalogEnabled
 					//ID's cant start with numbers
 					if( Character.isDigit( detail.getId().charAt(0) ) )
 					{
-						throw new OpenEditRuntimeException("Tables can't stat with a number " + searchtype +  " " + detail.getId());
+						throw new OpenEditException("Tables can't stat with a number " + searchtype +  " " + detail.getId());
 					}
 					sql = "ALTER TABLE "+searchtype+" ADD "+detail.getId()+" "+type + " DEFAULT NULL;";
 	

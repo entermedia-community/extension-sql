@@ -1,7 +1,7 @@
 package org.openedit.db.util;
 
 import org.openedit.Data;
-import org.openedit.OpenEditRuntimeException;
+import org.openedit.OpenEditException;
 import org.openedit.data.BaseData;
 
 public class BaseDataBeanCreator
@@ -20,7 +20,7 @@ public class BaseDataBeanCreator
 		}	
 		catch (Exception e)
 		{
-			throw new OpenEditRuntimeException(e);
+			throw new OpenEditException(e);
 		}
 	}
 

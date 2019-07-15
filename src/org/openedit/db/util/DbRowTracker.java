@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.openedit.Data;
-import org.openedit.OpenEditRuntimeException;
+import org.openedit.OpenEditException;
 import org.openedit.hittracker.HitTracker;
 
 public class DbRowTracker extends HitTracker
@@ -101,22 +101,14 @@ public class DbRowTracker extends HitTracker
 		}
 		catch (SQLException e)
 		{
-			throw new OpenEditRuntimeException(e);
+			throw new OpenEditException(e);
 		}
 	}
 
 	protected Data createRow()
 	{
-		try
-		{
-			String id = getResultSet().getString("id");
-			Data row = getDataMapper().populateData(id, getResultSet());
-			return row;
-		}
-		catch ( SQLException  ex)
-		{
-			throw new OpenEditRuntimeException(ex);
-		}
+		Data row = getDataMapper().populateData(getResultSet());
+		return row;
 	}
 
 	public int size()

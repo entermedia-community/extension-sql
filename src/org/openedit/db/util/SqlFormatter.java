@@ -10,9 +10,8 @@ import java.util.Map;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.dom4j.Element;
-import org.openedit.OpenEditRuntimeException;
+import org.openedit.OpenEditException;
 import org.openedit.data.PropertyDetail;
-import org.openedit.users.User;
 import org.openedit.users.UserManager;
 import org.openedit.util.DateStorageUtil;
 import org.openedit.xml.XmlArchive;
@@ -83,7 +82,7 @@ public class SqlFormatter
 			format = (ColumnFormat)getFormats().get(type);
 			if( format == null)
 			{
-				throw new OpenEditRuntimeException("/openedit/configuration/mapping/*.xml missing data type " + type + " used on " + inDetail.getId());
+				throw new OpenEditException("/openedit/configuration/mapping/*.xml missing data type " + type + " used on " + inDetail.getId());
 			}
 		}
 		if( format == null)
@@ -182,6 +181,11 @@ public class SqlFormatter
 	}
 	public String toCreateTable(String inTableName, PropertyDetail inId)
 	{
+		if( inId == null)
+		{
+			String 	sql = "CREATE TABLE " + inTableName;
+			return sql;
+		}
 		String type = getSqlType(inId);
 		//Use AUTO Increment?
 		if( type.equalsIgnoreCase("INT"))
