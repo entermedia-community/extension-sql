@@ -10,6 +10,7 @@
 	<property name="testsrc" location="${basedir}/tests"/>
     <property name="lib" location="${basedir}/lib"/>
 	 <property name="base" location="${basedir}/base"/>
+    <property name="etc" location="${basedir}/etc"/>
 	
     <property name="etc" location="${basedir}/etc"/>
     <property name="build" location="${basedir}/build"/>
@@ -106,6 +107,7 @@
 			<zipfileset dir="${lib}" prefix="lib" excludes="compile/**"/>
 			
 			<zipfileset dir="${deployDir}/builds/" includes="${appname}-${version}.jar" prefix="lib"/>
+			<zipfileset dir="${etc}" includes="install.xml"/>
 			<!-- zipfileset dir="${base}" prefix="base" / -->
 			<!-- zipfileset dir="${webinf}/bin" prefix="bin" / -->
 		</zip>
