@@ -11,15 +11,15 @@ var root = moduleManager.getBean("root").getAbsolutePath();
 var web = root + "/WEB-INF";
 var tmp = web + "/tmp";
 
-log.add("1. GET THE LATEST WAR FILE");
+log.info("1. GET THE LATEST WAR FILE");
 var downloader = new Downloader();
 downloader.download( war, tmp + "/ROOT.war");
 
-log.add("2. UNZIP WAR FILE");
+log.info("2. UNZIP WAR FILE");
 var unziper = new ZipUtil();
 unziper.unzip(  tmp + "/ROOT.war",  tmp );
 
-log.add("3. REPLACE LIBS");
+log.info("3. REPLACE LIBS");
 var files = new FileUtils();
 
 files.deleteMatch( web + "/lib/openedit-db*.jar");
@@ -41,13 +41,13 @@ files.deleteMatch( web + "/lib/mysql-connector*.jar");
 files.copyFileByMatch( tmp + "/WEB-INF/lib/mysql-connector*.jar", web + "/lib/");
 
 
-//log.add("4. UPGRADE BASE DIR");
+//log.info("4. UPGRADE BASE DIR");
 //files.deleteAll( root + "/base/tracker");
 //files.deleteAll( root + "/WEB-INF/base/tracker");
 //files.copyFiles( tmp + "/WEB-INF/base/tracker", root + "/WEB-INF/base/tracker");
 
-log.add("5. CLEAN UP");
+log.info("5. CLEAN UP");
 files.deleteAll(tmp);
 
-log.add("6. DB UPDATE COMPLETED");
+log.info("6. DB UPDATE COMPLETED");
 
