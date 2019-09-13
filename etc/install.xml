@@ -83,12 +83,12 @@
   	
     <copy todir="${dockerlib}" overwrite="false" preservelastmodified="true">
       <!--<fileset file="${build}/unpacked/lib/@BRANCH@extension-openedit*.jar"/>-->
-      <fileset file="${basedir}/unpacked/lib/extension-sql**.jar"/>
-      <fileset file="${basedir}/unpacked/lib/commons-dbcp**.jar"/>
-      <fileset file="${basedir}/unpacked/lib/mysql-connector-java**.jar"/>
+      <fileset file="${basedir}/lib/extension-sql**.jar"/>
+      <fileset file="${basedir}/lib/commons-dbcp**.jar"/>
+      <fileset file="${basedir}/lib/mysql-connector-java**.jar"/>
     </copy>
 
-    <delete dir="${basedir}/unpacked"/>
+    <delete dir="${basedir}"/>
     
   </target>
 
