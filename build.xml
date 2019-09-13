@@ -183,18 +183,7 @@
 			 		    </filterset>
 	 	</copy>	
 		<copy overwrite="true"  file="${etc}/extension-sql.xml" 
-			    tofile="${deployDir}/extension-sql.xml">
-			 		 <filterset>
-			 		      <filter token="BRANCH" value="${branch}"/>
-			 		    </filterset>
-	 	</copy>	
-
-		
-		
+			    tofile="${deployDir}/extension-sql.xml"/>
 			
-		</target>
-	  
-  
-  
- 
+	</target>
 </project>
