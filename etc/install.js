@@ -1,4 +1,4 @@
-importPackage( Packages.com.openedit.util );
+importPackage( Packages.org.openedit.util );
 importPackage( Packages.java.util );
 importPackage( Packages.java.lang );
 importPackage( Packages.java.io );
