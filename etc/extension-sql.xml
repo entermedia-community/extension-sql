@@ -1,0 +1,8 @@
+<plugins>
+	<plugin id="extension-sql" title="Extension SQL Extension" currentversion="9"
+		installscript="http://dev.entermediasoftware.com/jenkins/job/extension-sql/lastSuccessfulBuild/artifact/deploy/install.js"
+		depends="entermedia-server">
+		<description>Extension SQL Tools</description>
+		<currentversionnotes></currentversionnotes>
+	</plugin>
+</plugins>

@@ -176,12 +176,18 @@
 		 	<copy file="${deployDir}/builds/${appname}.zip" overwrite="true"
 		        tofile="${deployDir}/${appname}.zip"/>
 		
-			<copy overwrite="true"  file="${etc}/install.js" 
-				    tofile="${deployDir}/install.js">
-				 		 <filterset>
-				 		      <filter token="BRANCH" value="${branch}"/>
-				 		    </filterset>
-		 	</copy>	
+		<copy overwrite="true"  file="${etc}/install.js" 
+			    tofile="${deployDir}/install.js">
+			 		 <filterset>
+			 		      <filter token="BRANCH" value="${branch}"/>
+			 		    </filterset>
+	 	</copy>	
+		<copy overwrite="true"  file="${etc}/extension-sql.xml" 
+			    tofile="${deployDir}/extension-sql.xml">
+			 		 <filterset>
+			 		      <filter token="BRANCH" value="${branch}"/>
+			 		    </filterset>
+	 	</copy>	
 
 		
 		
