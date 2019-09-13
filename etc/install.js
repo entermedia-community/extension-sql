@@ -31,6 +31,8 @@ files.deleteMatch( web + "/lib/commons-dbcp-*.jar");
 files.deleteMatch( web + "/lib/mysql-connector-java-*.jar");
 
 files.copyFileByMatch( tmp + "/lib/*.jar", web + "/lib/");
+//files.copyFileToDirectory(tmp + "/" + name + ".zip", "/media/services/extensions/");
+files.copyFileByMatch(tmp + "/" + name + ".zip", "/media/services/extensions/");
 
 log.info("4. CLEAN UP");
 files.deleteAll(tmp);
