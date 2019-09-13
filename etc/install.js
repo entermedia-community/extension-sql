@@ -2,8 +2,10 @@ importPackage( Packages.org.openedit.util );
 importPackage( Packages.java.util );
 importPackage( Packages.java.lang );
 importPackage( Packages.java.io );
-importPackage( Packages.com.openedit.modules.update );
+importPackage( Packages.org.entermediadb.modules.update );
 importPackage( Packages.com.openedit.modules.scheduler );
+
+
 
 var name = "extension-sql";
 
