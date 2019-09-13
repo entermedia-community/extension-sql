@@ -9,7 +9,7 @@ importPackage( Packages.com.openedit.modules.scheduler );
 
 var name = "extension-sql";
 
-var war = "http://dev.entermediasoftware.com/jenkins/job/@BRANCH@" + name + "/lastSuccessfulBuild/artifact/deploy/" + name + ".zip";
+var war = "http://dev.entermediasoftware.com/jenkins/job/" + name + "/lastSuccessfulBuild/artifact/deploy/" + name + ".zip";
 
 var root = moduleManager.getBean("root").getAbsolutePath();
 var web = root + "/WEB-INF";
@@ -21,7 +21,6 @@ downloader.download( war, tmp + "/" + name + ".zip");
 
 log.info("2. UNZIP WAR FILE");
 var unziper = new ZipUtil();
-unziper.unzip(  tmp + "/ROOT.war",  tmp );
 unziper.unzip(  tmp + "/" + name + ".zip",  tmp );
 
 log.info("3. REPLACE LIBS");
