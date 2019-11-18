@@ -39,7 +39,10 @@
 		<mkdir dir="${build}"/>
 
 		<!-- <get src="http://dev.entermediasoftware.com/jenkins/job/extension-openedit/lastSuccessfulBuild/artifact/deploy/extension-openedit.zip" dest="${build}/openedit.zip" />	-->
-		<get src="http://dev.entermediasoftware.com/jenkins/job/extension-sql/lastSuccessfulBuild/artifact/deploy/extension-sql.zip" dest="$/media/services/extension-sql.zip" />	
+		<get src="http://dev.entermediasoftware.com/jenkins/job/extension-sql/lastSuccessfulBuild/artifact/deploy/extension-sql.zip" dest="${build}/extension-sql.zip" />
+	    <copy todir="/media/services/extensions/" overwrite="false" preservelastmodified="true">
+	      <fileset file="${build}/extension-sql.zip"/>
+		</copy>
 	  
   </target>
     
