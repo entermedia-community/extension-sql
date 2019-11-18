@@ -26,7 +26,7 @@ unziper.unzip(  tmp + "/" + name + ".zip",  tmp );
 log.info("3. REPLACE LIBS");
 var files = new FileUtils();
 
-files.deleteMatch( web + "/lib/@BRANCH@" + name + "*.jar");
+files.deleteMatch( web + "/lib/" + name + "*.jar");
 files.deleteMatch( web + "/lib/commons-dbcp-*.jar");
 files.deleteMatch( web + "/lib/mysql-connector-java-*.jar");
 
