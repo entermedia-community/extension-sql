@@ -9,7 +9,8 @@
     <property name="src" location="${webinf}/src"/>
     <property name="lib" location="${webinf}/lib"/>
     <property name="resources" location="resources"/>
-    <property name="build" location="./tmp/oe_upgrade"/>
+	<!--<property name="build" location="./tmp/oe_upgrade"/>-->
+    <property name="build" location="./tmp/"/>
     <property name="wardir" location="${build}/wartmp"/>
     <property name="dockerwebapp" location="/opt/entermediadb/webapp"/>
     <property name="dockerlib" location="${dockerwebapp}/WEB-INF/lib"/>
