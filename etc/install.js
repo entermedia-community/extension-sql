@@ -22,6 +22,7 @@ downloader.download( war, tmp + "/" + name + ".zip");
 log.info("2. UNZIP WAR FILE");
 var unziper = new ZipUtil();
 unziper.unzip(  tmp + "/" + name + ".zip",  tmp );
+log.info("2.a UNZIPPING TO:" + tmp + "/" );
 
 log.info("3. REPLACE LIBS");
 var files = new FileUtils();
