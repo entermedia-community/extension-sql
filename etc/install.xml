@@ -37,21 +37,17 @@
 	
 	<target name="update-dependencies" depends="clean">
 		<mkdir dir="${build}"/>
-
 		<!-- <get src="http://dev.entermediasoftware.com/jenkins/job/extension-openedit/lastSuccessfulBuild/artifact/deploy/extension-openedit.zip" dest="${build}/openedit.zip" />	-->
 		<get src="http://dev.entermediasoftware.com/jenkins/job/extension-sql/lastSuccessfulBuild/artifact/deploy/extension-sql.zip" dest="${build}/extension-sql.zip" />
-	    <copy todir="/media/services/extensions/" overwrite="false" preservelastmodified="true">
-	      <fileset file="${build}/extension-sql.zip"/>
-		</copy>
-	  
   </target>
     
   <target name="unwar">
   	<mkdir dir="${build}/unpacked"/>
-    <unzip dest="${build}/unpacked" src="${build}/openedit.zip" />
+    <!--<unzip dest="${build}/unpacked" src="${build}/openedit.zip" />-->
+    <unzip dest="${build}/unpacked" src="${build}/extension-sql.zip" />
   </target>
   
-  <target name="upgrade">
+	<!--<target name="upgrade">
   	<echo>Delete old open edit libs</echo>
     <delete>
       <fileset dir="./lib" includes="@BRANCH@extension-openedit**.jar"/>
@@ -71,12 +67,24 @@
      <copy todir="../WEB-INF/base/openedit" preservelastmodified="true">
        <fileset dir="${build}/unpacked/base/openedit"/>
      </copy>
-
-  	
     <delete dir="${build}"/>
-    
-  </target>
-  
+  </target>-->
+
+	  <target name="upgrade">
+	  	<echo>Delete old extension sql libs</echo>
+	    <delete>
+	      <fileset dir="./lib" includes="extension-sql**.jar"/>
+	    </delete>
+	  	
+	    <copy todir="./lib" overwrite="false" preservelastmodified="true">
+	      <fileset file="${build}/unpacked/lib/extension-sql*.jar"/>
+	    </copy>
+
+	    <delete dir="${build}"/>
+	    
+	  </target>
+
+	
   <target name="extend">
   	<echo>Reinstall plugin(s)</echo>
     <delete>
